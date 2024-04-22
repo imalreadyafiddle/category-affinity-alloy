@@ -4,9 +4,9 @@
     <title>Category Affinity Demo</title>
     <script>
       !(function (e, a, n, t) {
+        if (a) return;
         var i = e.head;
         if (i) {
-          if (a) return;
           var o = e.createElement("style");
           (o.id = "alloy-prehiding"),
             (o.innerText = n),
@@ -18,7 +18,7 @@
       })(
         document,
         document.location.href.indexOf("adobe_authoring_enabled") !== -1,
-        ".personalization-container { opacity: 0 !important }",
+        "body { opacity: 0 !important }",
         3000
       );
     </script>
@@ -165,16 +165,21 @@
         Check "Preserve Log" box - this will keep the log from clearing between
         page loads
       </li>
+      <li>Refresh this page.</li>
       <li>
-        Filter network requests by "delivery" - Target calls will be made
-        through at.js to the Delivery API endpoint at page load and as buttons
-        are clicked
+        Filter network requests by "interact" - Target calls will be made
+        through alloy.js to the Edge API endpoint at page load and as buttons
+        are clicked.
       </li>
       <li>
-        Click on a Target call, it will have its own tabs to sort through;
-        "Payload" shows the request made to Target, "Preview" shows the response
-        from Target — these items can be expanded using the triangle drop-downs
-        in the request/response bodies
+        Click the first "interact" call made, it will have its own tabs to sort
+        through; "Payload" shows the request made to the Edge network, "Preview"
+        shows the response containing the Target activity — these items can be
+        expanded using the triangle drop-downs in the request/response bodies
+      </li>
+      <li>
+        Click the second "interact" call made, "Payload" shows notification info
+        made to the Edge to indicate that the Target activity was displayed.
       </li>
       <li>
         Category info is sent to Target in requests made when a button is
