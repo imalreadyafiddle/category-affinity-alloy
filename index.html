@@ -3,12 +3,6 @@
   <head>
     <title>Category Affinity Demo</title>
     <script>
-      window.targetGlobalSettings = {
-        cookieDomain: "imalreadyafiddle.github.io",
-        secureOnly: true,
-      };
-    </script>
-    <script>
       !(function (e, a, n, t) {
         var i = e.head;
         if (i) {
@@ -203,7 +197,20 @@
             },
           },
           renderDecisions: true,
-          xdm: {},
+          xdm: {
+            _experience: {
+              decisioning: {
+                propositions: [
+                  {
+                    scope: "__view__",
+                  },
+                ],
+                propositionEventType: {
+                  display: 1,
+                },
+              },
+            },
+          },
         });
       }
     </script>
